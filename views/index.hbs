@@ -12,23 +12,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 </head>
 <body>
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-            appId      : '<APP_ID>',
-            xfbml      : true,
-            version    : 'v2.6'
-            });
-        };
-
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
     
     <div class="row">
         <div class="col s12 m6">
@@ -39,17 +22,11 @@
                 I am convenient because I require little markup to use effectively.</p>
             </div>
             <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
+                    <div id="widget" style="display: inline-block; overflow: hidden; text-align: left; white-space: nowrap;"><a target="_blank" href="http://m.me/PodRec-108513352890447" style="min-width: 90px;border-radius: 6px;-webkit-border-radius: 6px;-moz-border-radius: 6px;border: 1px solid #d5d5d5;padding: 6px 6px 6px 0;text-decoration: none; text-shadow: none;margin: 0;display: block;color: #575757;line-height: 24px;font-size: 14px;font-weight: normal;padding-left: 36px; background: url('https://assets.modernapp.co/assets/images/facebook-message-button-icon2x.png') no-repeat 5px 6px;background-color: #fff !important; background-size: 23px 23px;">Message us</a></div><script async defer src="https://assets.modernapp.co/assets/js/embed.js"></script>
             </div>
             </div>
         </div>
     </div>
       
-    <div class="fb-messengermessageus" 
-        messenger_app_id="APP_ID" 
-        page_id="PAGE_ID"
-        color="blue"
-        size="standard" ></div>
 </body>
 </html>
