@@ -1,6 +1,6 @@
 {
     "HELLO": "What's up? Want a recommendation? %[Hit Me](postback:hit_me) %[Nah...](postback:NAH...)",
-    "HIT ME": "You should check out The Living Room from Love And Radio!: %[Check it out](http://loveandradio.org/2015/03/the-living-room/)",
+    "HIT ME": "You should check out The Living Room from Love And Radio! %[Check it out](http://loveandradio.org/2015/03/the-living-room/)",
     "I LOVE YOU": "Awh, shucks! I love you too!",
     "NAH...": "![OK bye](http://data.whicdn.com/images/132330571/large.gif)\nOK then. Just type HIT ME whenever you do.",
     "CONNECT ME": "",
