@@ -4,8 +4,52 @@
     <script>
         Smooch.init({appToken: '{{appToken}}' });
     </script>
+    
+     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 </head>
 <body>
-    <h2>SmoochBot Demo</h2>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+            appId      : '<APP_ID>',
+            xfbml      : true,
+            version    : 'v2.6'
+            });
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">Card Title</span>
+                <p>I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+            </div>
+            </div>
+        </div>
+    </div>
+      
+    <div class="fb-messengermessageus" 
+        messenger_app_id="APP_ID" 
+        page_id="PAGE_ID"
+        color="blue"
+        size="standard" ></div>
 </body>
 </html>
