@@ -2,7 +2,7 @@
     "HELLO": "What's up? Want a recommendation? %[Hit Me](postback:hit_me) %[Nah...](postback:NAH...)",
     "HIT ME": "You should check out The Living Room from Love And Radio!: %[Check it out](http://loveandradio.org/2015/03/the-living-room/)",
     "I LOVE YOU": "Awh, shucks! I love you too!",
-    "NAH...": "OK then. Just type HIT ME whenever you do.\n![peace out](/app/img/peaceout.gif)",
+    "NAH...": "OK then. Just type HIT ME whenever you do.\n![Mariah Carey says goodbye](http://i.giphy.com/RIysKOenmvYgE.gif)",
     "CONNECT ME": "",
     "DISCONNECT": "Roger that, PodRec is back."
 }
