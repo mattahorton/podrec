@@ -13,6 +13,8 @@ module.exports = new Script({
 
     start: {
         receive: (bot) => {
+            console.log('chat started');
+            
             return bot.say('Hey y\'all! I built this bot because some of you have been ' +
              'interested in me providing podcast recommendations. Also, I wanted to ' + 
              'build a bot.')
