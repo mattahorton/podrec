@@ -31,6 +31,28 @@ module.exports = new Script({
                 .then(() => 'speak');
         }
     },
+    
+    submitPod: {
+        receive: (bot, message) => {
+            let upperText = message.text.trim().toUpperCase();
+            
+            if (upperText === "YOU KNOW IT") {
+                return bot.say(`Great! Show me the pod.`).then(() => 'parsePod');
+            }
+            
+            return bot.say(`Wrong. Thanks for playing.`).then(() => 'speak');
+        }
+    },
+    
+    parsePod: {
+        receive: (bot, message) => {
+            if(message.startsWith('http://pca.st/')) {
+                return bot.say('I\'ll add it to the list!').then(() => 'speak');
+            } else {
+                return bot.say('I don\'t know what to do with that.').then(() => 'speak');
+            }
+        }
+    },
 
 
     speak: {
@@ -58,6 +80,10 @@ module.exports = new Script({
             function processMessage(isSilent) {
                 if (isSilent) {
                     return Promise.resolve("speak");
+                }
+                
+                if (upperText === "BIG LOVE") {
+                    return bot.say(`What did Liz say?`).then(() => 'submitPod');
                 }
 
                 if (!_.has(scriptRules, upperText)) {
