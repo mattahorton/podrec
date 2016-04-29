@@ -6,6 +6,10 @@ const GoogleSpreadsheets = require('google-spreadsheets');
 
 const scriptRules = require('./script.json');
 
+function randomIntInc (low, high) {
+    return Math.floor(Math.random() * (high - low + 1) + low);
+}
+
 module.exports = new Script({
     processing: {
         //prompt: (bot) => bot.say('Beep boop...'),
@@ -97,9 +101,10 @@ module.exports = new Script({
                         spreadsheet.worksheets[0].cells({}, function(err, cells) {
                             // Cells will contain a 2 dimensional array with all cell data in the 
                             // range requested. 
-                            console.log(err);
-                            console.log(cells);
-                            console.log(cells['cells']['2']['1']);
+                            
+                            let intString = '' + randomIntInc(2,_.size(cells['cells']));
+                            console.log(intString);
+                            
                             let episode = cells['cells']['2']['1']['value'];
                             let podcast = cells['cells']['2']['2']['value'];
                             let url = cells['cells']['2']['3']['value'];
