@@ -46,11 +46,11 @@ module.exports = new Script({
     
     parsePod: {
         receive: (bot, message) => {
-            if(message.startsWith('http://pca.st/')) {
+            if(message.startsWith('pca.st/')) {
                 return bot.say('I\'ll add it to the list!').then(() => 'speak');
-            } else {
-                return bot.say('I don\'t know what to do with that.').then(() => 'speak');
             }
+            
+            return bot.say('I don\'t know what to do with that.').then(() => 'speak');
         }
     },
 
