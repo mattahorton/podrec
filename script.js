@@ -112,6 +112,7 @@ module.exports = new Script({
                         }, function(err, cells) {
                             // Cells will contain a 2 dimensional array with all cell data in the 
                             // range requested. 
+                            console.log(err);
                             console.log(cells);
                         });
                     });
