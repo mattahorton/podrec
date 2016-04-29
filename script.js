@@ -113,7 +113,7 @@ module.exports = new Script({
                             // range requested. 
                             console.log(err);
                             console.log(cells);
-                            console.log(cells[2][0]);
+                            console.log(cells[1][0]);
                         });
                     });
                 }
