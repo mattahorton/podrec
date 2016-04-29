@@ -2,9 +2,7 @@
 
 const _ = require('lodash');
 const Script = require('smooch-bot').Script;
-
-let request = require('request-json');
-var client = request.createClient('http://cors.io/?u=https://spreadsheets.google.com/feeds/list/1raJIBkoqcEdXgi_NXEF5AvJC1L09Laz78s32o3kFm8c/od6/public/values?alt=json-in-script&callback=x');
+const GoogleSpreadsheets = require('google-spreadsheets');
 
 const scriptRules = require('./script.json');
 
@@ -89,22 +87,35 @@ module.exports = new Script({
                     return bot.say(`What did Liz say?`).then(() => 'submitPod');
                 }
                 
-                // if (upperText === "HIT ME") {
-                //     return client.get('', function (err, res, body) {
-                //         console.log('next line is res');
-                //         console.log(res);
-                //         console.log('next line is body');
-                //         console.log(body);
-                //         let episode = body.feed.entry[0]['gsx$Episode']['$t'];
-                //         let podcast = body.feed.entry[0]['gsx$Podcast']['$t'];
-                //         let image = body.feed.entry[0]['gsx$Image']['$t'];
-                //         let url = body.feed.entry[0]['gsx$URL']['$t'];
+                
+                
+                if (upperText === "HIT ME") {
+                    // return client.get('', function (err, res, body) {
+                    //     console.log('next line is res');
+                    //     console.log(res);
+                    //     console.log('next line is body');
+                    //     console.log(body);
+                    //     let episode = body.feed.entry[0]['gsx$Episode']['$t'];
+                    //     let podcast = body.feed.entry[0]['gsx$Podcast']['$t'];
+                    //     let image = body.feed.entry[0]['gsx$Image']['$t'];
+                    //     let url = body.feed.entry[0]['gsx$URL']['$t'];
                         
-                //         return bot.say('Check out this episode of ' + podcast + 
-                //         ' called ' + episode + ' %[Link to Episode](' + 
-                //         url + ')').then(() => 'speak');
-                //     });
-                // }
+                    //     return bot.say('Check out this episode of ' + podcast + 
+                    //     ' called ' + episode + ' %[Link to Episode](' + 
+                    //     url + ')').then(() => 'speak');
+                    // });
+                    GoogleSpreadsheets({
+                        key: '1raJIBkoqcEdXgi_NXEF5AvJC1L09Laz78s32o3kFm8c'
+                    }, function(err, spreadsheet) {
+                        spreadsheet.worksheets[0].cells({
+                            range: 'A:D'
+                        }, function(err, cells) {
+                            // Cells will contain a 2 dimensional array with all cell data in the 
+                            // range requested. 
+                            console.log(cells);
+                        });
+                    });
+                }
 
                 if (!_.has(scriptRules, upperText)) {
                     return bot.say(`I didn't understand that.`).then(() => 'speak');
