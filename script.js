@@ -104,7 +104,7 @@ module.exports = new Script({
                     //     ' called ' + episode + ' %[Link to Episode](' + 
                     //     url + ')').then(() => 'speak');
                     // });
-                    GoogleSpreadsheets({
+                    return GoogleSpreadsheets({
                         key: '1raJIBkoqcEdXgi_NXEF5AvJC1L09Laz78s32o3kFm8c'
                     }, function(err, spreadsheet) {
                         console.log(err);
@@ -114,6 +114,24 @@ module.exports = new Script({
                             console.log(err);
                             console.log(cells);
                             console.log(cells['cells']['2']['1']);
+                            let episode = cells['cells']['2']['1']['value'];
+                            let podcast = cells['cells']['2']['2']['value'];
+                            let url = cells['cells']['2']['3']['value'];
+                            let image = cells['cells']['2']['4']['value'];
+                            
+                            let message = 'Check out ' + episode + ' from ' + podcast + "! " + 
+                            "%[Check it out](" + url + ")";
+                            
+                            var p = Promise.resolve();
+                            p = p.then(function() {
+                                return bot.say(message.trim());
+                            });
+                            
+                            p = p.then(function() {
+                                return bot.sendImage(url);
+                            });
+                            
+                            return p.then(() => 'speak');
                         });
                     });
                 }
