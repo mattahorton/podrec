@@ -114,7 +114,7 @@ module.exports = new Script({
                             });
                             
                             p = p.then(function() {
-                                return bot.say("%[Podcast logo](" + url +")");
+                                return bot.say("![Podcast logo](" + url +")");
                             });
                             
                             return p.then(() => 'speak');
