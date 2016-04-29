@@ -97,18 +97,18 @@ module.exports = new Script({
                     return GoogleSpreadsheets({
                         key: '1raJIBkoqcEdXgi_NXEF5AvJC1L09Laz78s32o3kFm8c'
                     }, function(err, spreadsheet) {
-                        console.log(err);
                         spreadsheet.worksheets[0].cells({}, function(err, cells) {
                             // Cells will contain a 2 dimensional array with all cell data in the 
                             // range requested. 
                             
-                            let intString = '' + randomIntInc(2,_.size(cells['cells']));
-                            console.log(intString);
+                            if (err) return Promise.resolve("speak");
                             
-                            let episode = cells['cells']['2']['1']['value'];
-                            let podcast = cells['cells']['2']['2']['value'];
-                            let url = cells['cells']['2']['3']['value'];
-                            let image = cells['cells']['2']['4']['value'];
+                            let intString = '' + randomIntInc(2,_.size(cells['cells']));
+                            
+                            let episode = cells['cells'][intString]['1']['value'];
+                            let podcast = cells['cells'][intString]['2']['value'];
+                            let url = cells['cells'][intString]['3']['value'];
+                            let image = cells['cells'][intString]['4']['value'];
                             
                             let message = 'Check out ' + episode + ' from ' + podcast + "! " + 
                             "%[Check it out](" + url + ")";
