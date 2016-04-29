@@ -46,8 +46,7 @@ module.exports = new Script({
     
     parsePod: {
         receive: (bot, message) => {
-            console.log(typeof message);
-            if(message.indexOf('http://pca.st/') === 0) {
+            if(message.text.indexOf('http://pca.st/') === 0) {
                 return bot.say('I\'ll add it to the list!').then(() => 'speak');
             }
             
