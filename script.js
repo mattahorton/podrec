@@ -109,12 +109,13 @@ module.exports = new Script({
                             "%[Check it out](" + url + ")";
                             
                             var p = Promise.resolve();
-                            p = p.then(function() {
-                                return bot.say(message.trim());
-                            });
                             
                             p = p.then(function() {
                                 return bot.say("![Podcast logo](" + image +")");
+                            });
+                            
+                            p = p.then(function() {
+                                return bot.say(message.trim());
                             });
                             
                             return p.then(() => 'speak');
