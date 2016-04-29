@@ -3,6 +3,9 @@
 const _ = require('lodash');
 const Script = require('smooch-bot').Script;
 
+request = require('request-json');
+var client = request.createClient('https://spreadsheets.google.com/feeds/list/1raJIBkoqcEdXgi_NXEF5AvJC1L09Laz78s32o3kFm8c/od6/public/values?alt=json-in-script&callback=x');
+
 const scriptRules = require('./script.json');
 
 module.exports = new Script({
@@ -84,6 +87,19 @@ module.exports = new Script({
                 
                 if (upperText === "BIG LOVE") {
                     return bot.say(`What did Liz say?`).then(() => 'submitPod');
+                }
+                
+                if (upperText === "HIT ME") {
+                    return client.get('', function (err, res, body) {
+                        let episode = body.feed.entry[0]['gsx$Episode']['$t'];
+                        let podcast = body.feed.entry[0]['gsx$Podcast']['$t'];
+                        let image = body.feed.entry[0]['gsx$Image']['$t'];
+                        let url = body.feed.entry[0]['gsx$URL']['$t'];
+                        
+                        return bot.say('Check out this episode of ' + podcast + 
+                        ' called ' + episode + ' %[Link to Episode](' + 
+                        url + ')').then(() => 'speak');
+                    });
                 }
 
                 if (!_.has(scriptRules, upperText)) {
