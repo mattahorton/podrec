@@ -91,6 +91,7 @@ module.exports = new Script({
                 
                 if (upperText === "HIT ME") {
                     return client.get('', function (err, res, body) {
+                        console.log('next line is body');
                         console.log(body);
                         let episode = body.feed.entry[0]['gsx$Episode']['$t'];
                         let podcast = body.feed.entry[0]['gsx$Podcast']['$t'];
