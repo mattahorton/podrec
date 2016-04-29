@@ -4,7 +4,7 @@ const _ = require('lodash');
 const Script = require('smooch-bot').Script;
 
 let request = require('request-json');
-var client = request.createClient('https://spreadsheets.google.com/feeds/list/1raJIBkoqcEdXgi_NXEF5AvJC1L09Laz78s32o3kFm8c/od6/public/values?alt=json-in-script&callback=x');
+var client = request.createClient('http://cors.io/?u=https://spreadsheets.google.com/feeds/list/1raJIBkoqcEdXgi_NXEF5AvJC1L09Laz78s32o3kFm8c/od6/public/values?alt=json-in-script&callback=x');
 
 const scriptRules = require('./script.json');
 
