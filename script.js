@@ -90,20 +90,6 @@ module.exports = new Script({
                 
                 
                 if (upperText === "HIT ME") {
-                    // return client.get('', function (err, res, body) {
-                    //     console.log('next line is res');
-                    //     console.log(res);
-                    //     console.log('next line is body');
-                    //     console.log(body);
-                    //     let episode = body.feed.entry[0]['gsx$Episode']['$t'];
-                    //     let podcast = body.feed.entry[0]['gsx$Podcast']['$t'];
-                    //     let image = body.feed.entry[0]['gsx$Image']['$t'];
-                    //     let url = body.feed.entry[0]['gsx$URL']['$t'];
-                        
-                    //     return bot.say('Check out this episode of ' + podcast + 
-                    //     ' called ' + episode + ' %[Link to Episode](' + 
-                    //     url + ')').then(() => 'speak');
-                    // });
                     return GoogleSpreadsheets({
                         key: '1raJIBkoqcEdXgi_NXEF5AvJC1L09Laz78s32o3kFm8c'
                     }, function(err, spreadsheet) {
@@ -128,7 +114,7 @@ module.exports = new Script({
                             });
                             
                             p = p.then(function() {
-                                return bot.sendImage(url);
+                                return bot.say("%[Podcast logo](" + url +")");
                             });
                             
                             return p.then(() => 'speak');
