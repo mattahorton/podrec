@@ -107,8 +107,9 @@ module.exports = new Script({
                     GoogleSpreadsheets({
                         key: '1raJIBkoqcEdXgi_NXEF5AvJC1L09Laz78s32o3kFm8c'
                     }, function(err, spreadsheet) {
+                        console.log(err);
                         spreadsheet.worksheets[0].cells({
-                            range: 'A:D'
+                            range: 'A1:D100'
                         }, function(err, cells) {
                             // Cells will contain a 2 dimensional array with all cell data in the 
                             // range requested. 
