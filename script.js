@@ -108,13 +108,12 @@ module.exports = new Script({
                         key: '1raJIBkoqcEdXgi_NXEF5AvJC1L09Laz78s32o3kFm8c'
                     }, function(err, spreadsheet) {
                         console.log(err);
-                        spreadsheet.worksheets[0].cells({
-                            range: 'A1:D100'
-                        }, function(err, cells) {
+                        spreadsheet.worksheets[0].cells({}, function(err, cells) {
                             // Cells will contain a 2 dimensional array with all cell data in the 
                             // range requested. 
                             console.log(err);
                             console.log(cells);
+                            console.log(cells[2][0]);
                         });
                     });
                 }
