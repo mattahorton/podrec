@@ -89,22 +89,22 @@ module.exports = new Script({
                     return bot.say(`What did Liz say?`).then(() => 'submitPod');
                 }
                 
-                if (upperText === "HIT ME") {
-                    return client.get('', function (err, res, body) {
-                        console.log('next line is res');
-                        console.log(res);
-                        console.log('next line is body');
-                        console.log(body);
-                        let episode = body.feed.entry[0]['gsx$Episode']['$t'];
-                        let podcast = body.feed.entry[0]['gsx$Podcast']['$t'];
-                        let image = body.feed.entry[0]['gsx$Image']['$t'];
-                        let url = body.feed.entry[0]['gsx$URL']['$t'];
+                // if (upperText === "HIT ME") {
+                //     return client.get('', function (err, res, body) {
+                //         console.log('next line is res');
+                //         console.log(res);
+                //         console.log('next line is body');
+                //         console.log(body);
+                //         let episode = body.feed.entry[0]['gsx$Episode']['$t'];
+                //         let podcast = body.feed.entry[0]['gsx$Podcast']['$t'];
+                //         let image = body.feed.entry[0]['gsx$Image']['$t'];
+                //         let url = body.feed.entry[0]['gsx$URL']['$t'];
                         
-                        return bot.say('Check out this episode of ' + podcast + 
-                        ' called ' + episode + ' %[Link to Episode](' + 
-                        url + ')').then(() => 'speak');
-                    });
-                }
+                //         return bot.say('Check out this episode of ' + podcast + 
+                //         ' called ' + episode + ' %[Link to Episode](' + 
+                //         url + ')').then(() => 'speak');
+                //     });
+                // }
 
                 if (!_.has(scriptRules, upperText)) {
                     return bot.say(`I didn't understand that.`).then(() => 'speak');
