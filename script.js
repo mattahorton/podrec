@@ -118,7 +118,7 @@ module.exports = new Script({
                             var p = Promise.resolve();
                             
                             p = p.then(function() {
-                                return bot.say(message.trim() + "![Podcast logo](" + image +")");
+                                return bot.say("Here's your rec! ![Podcast logo](" + image +")\n" + message.trim());
                             });
                             
                             // p = p.then(function() {
