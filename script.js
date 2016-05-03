@@ -118,12 +118,12 @@ module.exports = new Script({
                             var p = Promise.resolve();
                             
                             p = p.then(function() {
-                                return bot.say(message.trim() + "\n" + "Here's your rec! ![Podcast logo](" + image +")");
+                                return bot.say("Here's your rec! ![Podcast logo](" + image +")");
                             });
                             
-                            // p = p.then(function() {
-                            //     return bot.say(message.trim());
-                            // });
+                            p = p.then(function() {
+                                return bot.say(message.trim());
+                            });
                             
                             return p.then(() => 'speak');
                         });
