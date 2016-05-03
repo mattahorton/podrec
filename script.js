@@ -93,7 +93,9 @@ module.exports = new Script({
                 
                 
                 
-                if (upperText === "HIT ME") {
+                if ((upperText === "HIT ME") || (upperText === "HIT M") ||
+                 (upperText === "HITME") || (upperText === "HIT ME!") || (upperText === "HIT ME.")
+                 || (upperText === "PODCAST")) {
                     return GoogleSpreadsheets({
                         key: '1raJIBkoqcEdXgi_NXEF5AvJC1L09Laz78s32o3kFm8c'
                     }, function(err, spreadsheet) {
@@ -116,12 +118,12 @@ module.exports = new Script({
                             var p = Promise.resolve();
                             
                             p = p.then(function() {
-                                return bot.say("![Podcast logo](" + image +")");
+                                return bot.say("![Podcast logo](" + image +") " + message.trim());
                             });
                             
-                            p = p.then(function() {
-                                return bot.say(message.trim());
-                            });
+                            // p = p.then(function() {
+                            //     return bot.say(message.trim());
+                            // });
                             
                             return p.then(() => 'speak');
                         });
