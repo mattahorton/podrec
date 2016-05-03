@@ -32,7 +32,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
-                .then(() => bot.say(`Great. That's settled. Just say HIT ME to get a recommendation.`))
+                .then(() => bot.say(`Great. That's settled. Just say HIT ME to get a recommendation. Remember, you can always type HELP if you're lost.`))
                 .then(() => 'speak');
         }
     },
