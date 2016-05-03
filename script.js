@@ -131,7 +131,7 @@ module.exports = new Script({
                 }
 
                 if (!_.has(scriptRules, upperText)) {
-                    return bot.say(`I didn't understand that. Try saying HIT ME to get a podcast recommendation.`).then(() => 'speak');
+                    return bot.say(`I didn't understand that. Try saying HIT ME to get a podcast recommendation. Remember, you can always type HELP if you're lost.`).then(() => 'speak');
                 }
 
                 var response = scriptRules[upperText];

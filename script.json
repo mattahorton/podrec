@@ -3,7 +3,7 @@
     "HEY": "What's up? Want a recommendation? %[Hit Me](postback:hit_me) %[Nah...](postback:NAH...)",
     "HI": "What's up? Want a recommendation? %[Hit Me](postback:hit_me) %[Nah...](postback:NAH...)",
     "YO": "What's up? Want a recommendation? %[Hit Me](postback:hit_me) %[Nah...](postback:NAH...)",
-    "HELP": "Hey! This is PodRec, a podcast recommndation bot.\nWhat can I help you with? %[A recommendation](postback:want_rec) %[Podcast?](postback:whats_a_podcast) %[A How-To](postback:how_do_i_listen)",
+    "HELP": "Hey! This is PodRec, a podcast recommendation bot.\nWhat can I help you with? %[A recommendation](postback:want_rec) %[Podcast?](postback:whats_a_podcast) %[A How-To](postback:how_do_i_listen)",
     "A RECOMMENDATION": "Oh! Ok. Just type HIT ME or click this button %[Hit Me](postback:hit_me)",
     "PODCAST?": "Podcasts are like radio on the Internet. ![Russ Hanneman](https://pbs.twimg.com/profile_images/612797837882077184/VidQco_F_400x400.jpg)\nThey are available episode by episode online. Some of them are on actual radio, too! %[How do I listen to podcasts?](postback:how_do_i_listen)",
     "A HOW-TO": "Are you on iPhone? There should be an app called Podcasts built-in. I also recommend Pocket Casts or Overcast if you don't like that one.\nAndroid folks, Pocket Casts is my #1 recommendation, but most podcasts (except WBEZ shows like Serial and This American Life, arguably the two most popular podcasts) are available inside Google Play Music which is built-in. %[Thanks!](postback:recommend)",
