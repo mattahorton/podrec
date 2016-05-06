@@ -20,19 +20,16 @@ module.exports = new Script({
         receive: (bot) => {
             console.log('chat started');
             
-            return bot.say('Hey y\'all! I built this bot because some of you have been ' +
-             'interested in me providing podcast recommendations. Also, I wanted to ' + 
-             'build a bot.')
-                .then(() => 'askName');
+            return bot.say('Hey! I\'m Podrec.').then(() => 'askName');
         }
     },
     
     askName: {
-        prompt: (bot) => bot.say('Just humor me here and type your name so this thing can know what to call you. Feel free to enter something like \'Queen Bey\' or \'Sunshine\' or really whatever you want.'),
+        prompt: (bot) => bot.say('Humor me here and type your name so I can know what to call you. Feel free to enter something like \'Queen Bey\' or \'Sunshine\' or really whatever you want.'),
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
-                .then(() => bot.say(`Great. That's settled. Just say HIT ME to get a recommendation. Remember, you can always type HELP if you're lost.`))
+                .then(() => bot.say(`Great, ${name}. That's settled. Just say HIT ME to get a recommendation. Remember, you can always type HELP if you're lost.`))
                 .then(() => 'speak');
         }
     },
